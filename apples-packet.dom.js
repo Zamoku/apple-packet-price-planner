@@ -15,8 +15,29 @@ let costApple = 0;
 let costPacket = 0;
 let recomPrice = 0;
 
-calculateBtn.addEventListener('click',function(){
+const applePacket = ApplePacket()
 
-    priceBoxApples.value
-})
+function setAppleValues(){
+
+    applePacket.setBoxAppleCost(Number(priceBoxApples.value))
+    applePacket.setNumberOfApples(Number(numberApples.value)) 
+    applePacket.setSizePacket(Number(packetSize.value))
+    applePacket.setProfit(Number(requiredProfit.value))
+  
+}
+
+function getAppleValues(){
+
+    numberOfPackets.innerHTML = applePacket.getBoxAppleCost().toFixed(2);
+    costPerApple.innerHTML = applePacket.getPricePerApple().toFixed(2);
+    costPerPacket.innerHTML = applePacket.getPricePerPacket().toFixed(2);
+    recomendedPrice.innerHTML = applePacket.getRecommendedPrice().toFixed(2);
+
+    
+    
+}
+
+
+calculateBtn.addEventListener('click', setAppleValues);
+calculateBtn.addEventListener('click', getAppleValues);
 

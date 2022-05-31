@@ -4,7 +4,7 @@ describe('The apple packet price widget', function() {
         var applePacket = ApplePacket();
 
         applePacket.setBoxAppleCost(150);
-        assert.equal(1.75, applePacket.getBoxAppleCost())
+        assert.equal(150, applePacket.getBoxAppleCost())
 		
 	});
 
@@ -12,7 +12,7 @@ describe('The apple packet price widget', function() {
         var applePacket = ApplePacket();
 
         applePacket.setNumberOfApples(100);
-        assert.equal(1.75, applePacket.getNumberOfApples())
+        assert.equal(100, applePacket.getNumberOfApples())
                         
         });
 
@@ -26,41 +26,42 @@ describe('The apple packet price widget', function() {
 
         it ('should allow to set the required profit', function() {
           var applePacket = ApplePacket();
+          
           applePacket.setProfit(30);
-          assert.equal(1.75, applePacket.getProfit())
+          assert.equal(30, applePacket.getProfit())
                                        
         });
 
         it ('should calculate the number of packets', function() {
                 var applePacket = ApplePacket();
 
-                applePacket.setSizePacket(2);
-                applePacket.setNumberOfApples(50)
-                assert.equal(1.75, applePacket.getNumberOfPackets())
+                applePacket.setSizePacket(3);
+                applePacket.setNumberOfApples(60)
+                assert.equal(20, applePacket.getNumberOfPackets())
                                        
                });
 
                it ('should calculate the price per apple', function() {
                 var applePacket = ApplePacket();
 
-                applePacket.setBoxAppleCost(1.75);
-                applePacket.setNumberOfApples(1.75);
-                assert.equal(1.75, applePacket.getPricePerApple())
+                applePacket.setBoxAppleCost(100);
+                applePacket.setNumberOfApples(50);
+                assert.equal(2, applePacket.getPricePerApple())
                                        
                });
                it ('should calculate the price per packet', function() {
                 var applePacket = ApplePacket();
 
-                applePacket.setNumberOfApples(1.75);
+                applePacket.setBoxAppleCost(2);
                 applePacket.setSizePacket(4);
-                assert.equal(1.75, applePacket.getPricePerPacket())
+                assert.equal(8, applePacket.getPricePerPacket())
                                        
                });it ('should calculate the recommended packet price', function() {
                 var applePacket = ApplePacket();
 
                 applePacket.getPricePerPacket();
-                applePacket.getProfit();
-                assert.equal(1.75, applePacket.getRecommendedPrice())
+                applePacket.getProfit(20);
+                assert.equal(0, applePacket.getRecommendedPrice())
                                        
                });
 
