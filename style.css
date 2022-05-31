@@ -1,0 +1,15 @@
+.container{
+    background-color: grey;
+}
+.box{
+    display: row;
+}
+input{
+     margin-left: 50px;
+      /* display: inline-block;  */
+     align-content: right; 
+}
+span{
+    
+     align-items: right;
+}
