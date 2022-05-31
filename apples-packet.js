@@ -48,7 +48,7 @@ function ApplePacket(){
          return priceApples
     }
     function getPricePerPacket(){
-        pricePacket = getBoxAppleCost() * getSizePacket()
+        pricePacket = getBoxAppleCost() / getSizePacket()
         return pricePacket
         
     }
